@@ -46,8 +46,10 @@ class skills(models.Model):
 
 class projects(models.Model):
     connection=models.ForeignKey(to=User,on_delete=CASCADE)
-    project_name=models.CharField(max_length=20,null=True,blank=True)
+    project_name=models.CharField(max_length=50,null=True,blank=True)
     description=models.CharField(max_length=50,null=True,blank=True)
+    project_date=models.CharField(max_length=50,null=True,blank=True)
+    images=models.ImageField(upload_to='pic',null=True,blank=True)
     project_link=models.CharField(max_length=60,null=True,blank=True)
 
 class services(models.Model):
